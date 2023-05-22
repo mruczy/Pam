@@ -6,7 +6,7 @@ import com.example.cpredplayer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    //private val dbHandler by lazy { DBHandler(this,) }
+    private val dbHandler by lazy { DBHandler(this,) }
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

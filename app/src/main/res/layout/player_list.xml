@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ff1111"
     android:orientation="vertical"
-    tools:context=".List">
+    tools:context=".PlayerList">
 
 
     <LinearLayout
@@ -22,21 +22,20 @@
             android:layout_height="wrap_content">
 
             <TableRow>
-
                 <Button
                     android:id="@+id/addButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="#000000"
-                    android:text="Add Character" />
+                    android:text="Add" />
 
                 <Button
                     android:id="@+id/mapButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="#000000"
                     android:text="Map" />
