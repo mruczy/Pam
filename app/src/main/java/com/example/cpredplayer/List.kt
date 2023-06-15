@@ -1,22 +1,23 @@
 package com.example.cpredplayer
 
 import android.app.Dialog
-import android.util.Log
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cpredplayer.databinding.PlayerListBinding
-import com.example.cpredplayer.databinding.DialogAddPlayerBinding
+import com.example.cpredplayer.databinding.ListBinding
+import com.example.cpredplayer.databinding.DialogAddBinding
+import com.example.cpredplayer.databinding.DialogAddCharacterBinding
 
-
-class PlayerList : Fragment() {
+class List : Fragment() {
 
     private lateinit var dbHandler: DBHandler
-    private val binding by lazy { PlayerListBinding.inflate(layoutInflater) }
+    private val binding by lazy { ListBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,23 +25,30 @@ class PlayerList : Fragment() {
     ): View? {
         val context = this.context
         if (context != null) {
-            dbHandler  = DBHandler(context)
+            dbHandler = DBHandler(context)
         }
 
         binding.dataBaseRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context)
-            adapter = PlayerAdapter(dbHandler, this.context)
+            adapter = CharacterAdapter(dbHandler, this.context)
         }
+
 
         binding.addButton.setOnClickListener {
             addCharacterDialog()
         }
 
-        binding.mapButton.setOnClickListener {
-            Log.d("button", "to do")
+        binding.map.setOnClickListener {
+            val url = "https://www.nightcity.io/"
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
 
-        return binding.root
+
+
+        return  binding.root
     }
 
     private fun addCharacterDialog()
@@ -48,10 +56,9 @@ class PlayerList : Fragment() {
         val context = this.context
         if (context != null)
         {
-            //val dialog = Dialog(context)
             val dialog = Dialog(context, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
             dialog.setContentView(R.layout.activity_main)
-            val dialogBinding = DialogAddPlayerBinding.inflate(LayoutInflater.from(context))
+            val dialogBinding = DialogAddCharacterBinding.inflate(LayoutInflater.from(context))
 
             dialog.apply {
                 setCancelable(false)
@@ -60,14 +67,15 @@ class PlayerList : Fragment() {
 
             dialogBinding.apply {
 
-                buttonAddCharacter1.setOnClickListener {
-                    Log.d("button add 1", "to do")
-                    dialog.dismiss()
-                }
+                buttonAddCharacter.setOnClickListener {
+                    val nickname = dialogBinding.addTextNickname.text.toString()
+                    val role = dialogBinding.addTextRole.text.toString()
 
-                buttonAddCharacter2.setOnClickListener {
-                    Log.d("button add 2", "to do")
-                    Navigation.findNavController(binding.root).navigate(R.id.action_list_to_add_2)
+                    if(nickname.isNotEmpty() && role.isNotEmpty()) {
+                        dbHandler.addCharacter(Character(nickname, role))
+                        refreshList()
+                    }
+
                     dialog.dismiss()
                 }
 
@@ -79,6 +87,9 @@ class PlayerList : Fragment() {
         }
     }
 
+    private fun refreshList() {
+        binding.dataBaseRecyclerView.adapter?.notifyDataSetChanged()
+    }
 
     override fun onDestroy() {
         dbHandler.close()

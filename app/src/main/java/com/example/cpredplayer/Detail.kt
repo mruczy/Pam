@@ -1,5 +1,8 @@
 package com.example.cpredplayer
 
+import android.app.Dialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -7,15 +10,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.example.cpredplayer.databinding.PlayerBinding
+import com.example.cpredplayer.databinding.DetailBinding
+import com.example.cpredplayer.databinding.DialogDiceBinding
 
-class PlayerDetail : Fragment() {
+class Detail : Fragment() {
 
     private lateinit var itemId: String
     private lateinit var dbHandler: DBHandler
-    private lateinit var item: Player
+    private lateinit var item: Character
 
-    val binding by lazy { PlayerBinding.inflate(layoutInflater) }
+    val binding by lazy { DetailBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +35,11 @@ class PlayerDetail : Fragment() {
         if (context != null) {
             dbHandler = DBHandler(context)
 
-            item = dbHandler.getPlayer().find {item -> item.id.toString() == itemId}!!
+            item = dbHandler.getCharacter().find { item -> item.id.toString() == itemId }!!
             binding.textViewDetailNickname.text = Editable.Factory.getInstance().newEditable(item.nickname)
             binding.textViewDetailRole.text = Editable.Factory.getInstance().newEditable(item.role)
 
-            binding.textViewInt.text = Editable.Factory.getInstance().newEditable(item.int)
+            binding.textViewInt.text = Editable.Factory.getInstance().newEditable(item.int_s)
             binding.textViewRef.text = Editable.Factory.getInstance().newEditable(item.ref)
             binding.textViewZw.text = Editable.Factory.getInstance().newEditable(item.zw)
             binding.textViewTech.text = Editable.Factory.getInstance().newEditable(item.tech)
@@ -87,20 +91,43 @@ class PlayerDetail : Fragment() {
             binding.textViewQeEquipment10.text = Editable.Factory.getInstance().newEditable(item.EqEquipment10)
             binding.textViewQeComment10.text = Editable.Factory.getInstance().newEditable(item.EqComment10)
 
+            binding.textViewCyb1.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja1)
+            binding.textViewDane1.text = Editable.Factory.getInstance().newEditable(item.dane1)
+            binding.textViewCyb2.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja2)
+            binding.textViewDane2.text = Editable.Factory.getInstance().newEditable(item.dane2)
+            binding.textViewCyb3.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja3)
+            binding.textViewDane3.text = Editable.Factory.getInstance().newEditable(item.dane3)
+            binding.textViewCyb4.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja4)
+            binding.textViewDane4.text = Editable.Factory.getInstance().newEditable(item.dane4)
+            binding.textViewCyb5.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja5)
+            binding.textViewDane5.text = Editable.Factory.getInstance().newEditable(item.dane5)
+            binding.textViewCyb6.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja6)
+            binding.textViewDane6.text = Editable.Factory.getInstance().newEditable(item.dane6)
+            binding.textViewCyb7.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja7)
+            binding.textViewDane7.text = Editable.Factory.getInstance().newEditable(item.dane7)
+            binding.textViewCyb8.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja8)
+            binding.textViewDane8.text = Editable.Factory.getInstance().newEditable(item.dane8)
+            binding.textViewCyb9.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja9)
+            binding.textViewDane9.text = Editable.Factory.getInstance().newEditable(item.dane9)
+            binding.textViewCyb10.text = Editable.Factory.getInstance().newEditable(item.cyborgizacja10)
+            binding.textViewDane10.text = Editable.Factory.getInstance().newEditable(item.dane10)
+
+
+
             binding.save.setOnClickListener {
                 val updatenickname = binding.textViewDetailNickname.text.toString()
                 val updaterole = binding.textViewDetailRole.text.toString()
 
-                val updateInt = binding.textViewInt.text.toString()
-                val updateRef = binding.textViewRef.text.toString()
-                val updateZw = binding.textViewZw.text.toString()
-                val updateTech = binding.textViewTech.text.toString()
-                val updateCha = binding.textViewCha.text.toString()
-                val updateSw = binding.textViewSw.text.toString()
-                val updateSz = binding.textViewSz.text.toString()
-                val updateRuch = binding.textViewRuch.text.toString()
-                val updateBc = binding.textViewBc.text.toString()
-                val updateEmp = binding.textViewEmp.text.toString()
+                val updateint = binding.textViewInt.text.toString()
+                val updateref = binding.textViewRef.text.toString()
+                val updatezw = binding.textViewZw.text.toString()
+                val updatetech = binding.textViewTech.text.toString()
+                val updatecha = binding.textViewCha.text.toString()
+                val updatesw = binding.textViewSw.text.toString()
+                val updatesz = binding.textViewSz.text.toString()
+                val updateruch = binding.textViewRuch.text.toString()
+                val updatebc = binding.textViewBc.text.toString()
+                val updateemp = binding.textViewEmp.text.toString()
 
                 val updateweaponName1 = binding.textViewWeaponName1.text.toString()
                 val updateweaponDmg1 = binding.textViewWeaponDmg1.text.toString()
@@ -143,21 +170,42 @@ class PlayerDetail : Fragment() {
                 val updateEqEquipment10 = binding.textViewQeEquipment10.text.toString()
                 val updateEqComment10 = binding.textViewQeComment10.text.toString()
 
-                dbHandler.updatePlayer(
+                val updateCyb1 = binding.textViewCyb1.text.toString()
+                val updatedane1 = binding.textViewDane1.text.toString()
+                val updateCyb2 = binding.textViewCyb2.text.toString()
+                val updatedane2 = binding.textViewDane2.text.toString()
+                val updateCyb3 = binding.textViewCyb3.text.toString()
+                val updatedane3 = binding.textViewDane3.text.toString()
+                val updateCyb4 = binding.textViewCyb4.text.toString()
+                val updatedane4 = binding.textViewDane4.text.toString()
+                val updateCyb5 = binding.textViewCyb5.text.toString()
+                val updatedane5 = binding.textViewDane5.text.toString()
+                val updateCyb6 = binding.textViewCyb6.text.toString()
+                val updatedane6 = binding.textViewDane6.text.toString()
+                val updateCyb7 = binding.textViewCyb7.text.toString()
+                val updatedane7 = binding.textViewDane7.text.toString()
+                val updateCyb8 = binding.textViewCyb8.text.toString()
+                val updatedane8 = binding.textViewDane8.text.toString()
+                val updateCyb9 = binding.textViewCyb9.text.toString()
+                val updatedane9 = binding.textViewDane9.text.toString()
+                val updateCyb10 = binding.textViewCyb10.text.toString()
+                val updatedane10 = binding.textViewDane10.text.toString()
+
+                dbHandler.updateCharacter(
                     item.id,
                     updatenickname,
                     updaterole,
 
-                    updateInt,
-                    updateRef,
-                    updateZw,
-                    updateTech,
-                    updateCha,
-                    updateSw,
-                    updateSz,
-                    updateRuch,
-                    updateBc,
-                    updateEmp,
+                    updateint,
+                    updateref,
+                    updatezw,
+                    updatetech,
+                    updatecha,
+                    updatesw,
+                    updatesz,
+                    updateruch,
+                    updatebc,
+                    updateemp,
 
                     updateweaponName1,
                     updateweaponDmg1,
@@ -171,14 +219,12 @@ class PlayerDetail : Fragment() {
                     updateweaponName4,
                     updateweaponDmg4,
                     updateweaponAmmo4,
-
                     updatearmorHeadDef,
                     updatearmorHeadPenalty,
                     updatearmorBodyDef,
                     updatearmorBodyPenalty,
                     updatearmorShieldDef,
                     updatearmorShieldPenalty,
-
                     updateEqEquipment1,
                     updateEqComment1,
                     updateEqEquipment2,
@@ -198,17 +244,84 @@ class PlayerDetail : Fragment() {
                     updateEqEquipment9,
                     updateEqComment9,
                     updateEqEquipment10,
-                    updateEqComment10)
+                    updateEqComment10,
+
+                    updateCyb1,
+                    updatedane1,
+                    updateCyb2,
+                    updatedane2,
+                    updateCyb3,
+                    updatedane3,
+                    updateCyb4,
+                    updatedane4,
+                    updateCyb5,
+                    updatedane5,
+                    updateCyb6,
+                    updatedane6,
+                    updateCyb7,
+                    updatedane7,
+                    updateCyb8,
+                    updatedane8,
+                    updateCyb9,
+                    updatedane9,
+                    updateCyb10,
+                    updatedane10)
             }
-
-            binding.map.setOnClickListener {  }
-
-            binding.kosc.setOnClickListener {  }
 
             binding.back.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.action_detail_to_list)
             }
+
+            binding.map.setOnClickListener {
+                val url = "https://www.nightcity.io/"
+
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(url)
+                startActivity(intent)
+            }
+
+            binding.dice.setOnClickListener {
+                rolldialog()
+            }
         }
         return binding.root
+    }
+
+    private fun rolldialog()
+    {
+        val context = this.context
+        if (context != null)
+        {
+            val dialog = Dialog(context, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
+            dialog.setContentView(R.layout.activity_main)
+            val dialogBinding = DialogDiceBinding.inflate(LayoutInflater.from(context))
+
+            dialog.apply {
+                setCancelable(false)
+                setContentView(dialogBinding.root)
+            }
+
+            dialogBinding.apply {
+                buttonRoll.setOnClickListener {
+                    val x = dialogBinding.textK1.text.toString().toInt()
+                    val y = dialogBinding.textK2.text.toString().toInt()
+
+                    var sum = 0
+
+                    for (i in 0 until x)
+                    {
+                        val random = (0..y).random()
+                        sum += random
+                    }
+
+                    dialogBinding.textDice.setText(sum.toString())
+                }
+
+                buttonCancel.setOnClickListener {
+                    dialog.dismiss()
+                }
+            }
+            dialog.show()
+        }
     }
 }

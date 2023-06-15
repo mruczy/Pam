@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff1111"
-    tools:context=".PlayerDetail">
+    tools:context=".Detail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,6 +30,17 @@
                     android:textStyle="bold"/>
 
                 <Button
+                    android:id="@+id/dice"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="#000000"
+                    android:text="Dice"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"/>
+
+                <Button
                     android:id="@+id/map"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -37,17 +48,6 @@
                     android:layout_margin="5dp"
                     android:backgroundTint="#000000"
                     android:text="Map"
-                    android:textColor="#ffff"
-                    android:textStyle="bold"/>
-
-                <Button
-                    android:id="@+id/kosc"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="#000000"
-                    android:text="Dice"
                     android:textColor="#ffff"
                     android:textStyle="bold"/>
 
@@ -100,29 +100,25 @@
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_detail_nickname" />
 
-
-
-
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
 
                     <TableRow>
+
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
                             android:background="#000000"
                             android:gravity="center_vertical|center_horizontal"
                             android:padding="10dp"
                             android:text="INT"
-                            android:textSize="14dp"
                             android:textColor="#ffff"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
-
-
 
                         <TextView
                             android:layout_width="0dp"
@@ -136,7 +132,6 @@
                             android:textSize="14dp"
                             android:textColor="#ffff"
                             android:textStyle="bold" />
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -187,7 +182,7 @@
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
                             android:padding="10dp"
-                            android:text="Int"
+                            android:text="INT"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -195,13 +190,13 @@
                         <EditText
                             android:id="@+id/text_view_ref"
                             android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_weight="1"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="5dp"
-                            android:text="Ref"
+                            android:padding="10dp"
+                            android:text="REF"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -211,11 +206,11 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:text="Zw"
+                            android:padding="10dp"
+                            android:text="ZW"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -223,13 +218,13 @@
                         <EditText
                             android:id="@+id/text_view_tech"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="10dp"
-                            android:text="Tech"
+                            android:padding="5dp"
+                            android:text="TECH"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -241,8 +236,8 @@
                             android:layout_height="40dp"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="10dp"
-                            android:text="Cha"
+                            android:padding="5dp"
+                            android:text="CHA"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -262,9 +257,6 @@
                             android:textSize="14dp"
                             android:textColor="#ffff"
                             android:textStyle="bold" />
-
-
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -277,7 +269,6 @@
                             android:textSize="14dp"
                             android:textColor="#ffff"
                             android:textStyle="bold" />
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -286,7 +277,7 @@
                             android:background="#000000"
                             android:gravity="center_vertical|center_horizontal"
                             android:padding="10dp"
-                            android:text="RUCH"
+                            android:text="Ruch"
                             android:textSize="14dp"
                             android:textColor="#ffff"
                             android:textStyle="bold" />
@@ -328,7 +319,7 @@
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
                             android:padding="10dp"
-                            android:text="Sw"
+                            android:text="SW"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -336,13 +327,13 @@
                         <EditText
                             android:id="@+id/text_view_sz"
                             android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_weight="1"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="5dp"
-                            android:text="Sz"
+                            android:padding="10dp"
+                            android:text="SZ"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -352,11 +343,11 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:text="Ruch"
+                            android:padding="10dp"
+                            android:text="RUCH"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -364,13 +355,13 @@
                         <EditText
                             android:id="@+id/text_view_bc"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="40dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="10dp"
-                            android:text="Bc"
+                            android:padding="5dp"
+                            android:text="BC"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
@@ -382,12 +373,13 @@
                             android:layout_height="40dp"
                             android:background="#ffff"
                             android:gravity="center_vertical|center_horizontal"
-                            android:padding="10dp"
-                            android:text="Emp"
+                            android:padding="5dp"
+                            android:text="EMP"
                             android:textSize="14dp"
                             android:textColor="#000000"
                             android:textStyle="bold" />
                     </TableRow>
+
 
                     <TableRow
                         android:layout_marginTop="5dp">
@@ -1112,6 +1104,339 @@
                     </TableRow>
                 </TableLayout>
 
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#000000"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textColor="#ffff"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#000000"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textColor="#ffff"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_1"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_1"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_2"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_2"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_3"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_3"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_4"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_4"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_5"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_5"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_6"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_6"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_7"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_7"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_8"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_8"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_9"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_9"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <EditText
+                            android:id="@+id/text_view_cyb_10"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="10dp"
+                            android:text="Cyborgizacja"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/text_view_dane_10"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="40dp"
+                            android:background="#ffff"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:padding="5dp"
+                            android:text="Dane"
+                            android:textSize="14dp"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+
             </LinearLayout>
         </ScrollView>
 
@@ -1120,3 +1445,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

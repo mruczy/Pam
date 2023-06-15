@@ -2,46 +2,40 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation.xml"
+    android:id="@+id/navigation"
     app:startDestination="@id/list">
 
     <fragment
         android:id="@+id/list"
-        android:name="com.example.cpredplayer.PlayerList"
+        android:name="com.example.cpredplayer.List"
         android:label="activity_main"
         tools:layout="@layout/activity_main">
-
-        <action
-            android:id="@+id/action_list_to_add_2"
-            app:destination="@id/add_2" />
         <action
             android:id="@+id/action_list_to_detail"
-            app:destination="@id/detail">
+            app:destination="@+id/detail">
             <argument
                 android:name="itemId"
                 app:argType="string" />
         </action>
-    </fragment>
-
-    <fragment
-        android:id="@+id/add_2"
-        android:name="com.example.cpredplayer.PlayerAdd2"
-        android:label="add character 2"
-        tools:layout="@layout/add_player_2">
 
         <action
-            android:id="@+id/action_add_2_to_list2"
-            app:destination="@id/list" />
+            android:id="@+id/action_list_to_add_1"
+            app:destination="@+id/add_1">
+        </action>
+
+        <action
+            android:id="@+id/action_list_to_add_2"
+            app:destination="@+id/add_2">
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/detail"
-        android:name="com.example.cpredplayer.PlayerDetail"
+        android:name="com.example.cpredplayer.Detail"
         android:label="detail"
-        tools:layout="@layout/player">
+        tools:layout="@layout/detail">
         <action
             android:id="@+id/action_detail_to_list"
-            app:destination="@id/list" />
+            app:destination="@+id/list"/>
     </fragment>
-
 </navigation>

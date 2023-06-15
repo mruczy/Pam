@@ -1,33 +1,35 @@
 package com.example.cpredplayer
 
-import kotlin.math.sqrt
-
-data class Player(val nickname: String, val role: String) {
+data class Character(val nickname: String, val role:String) {
     var id:Int = 0
 
-    var int:String = ""
-    var ref:String = ""
-    var zw:String = ""
-    var tech:String = ""
-    var cha:String = ""
-    var sw:String = ""
-    var sz:String = ""
-    var ruch:String = ""
-    var bc:String = ""
-    var emp:String = ""
+    var int_s: String = ""
+    var ref: String = ""
+    var zw: String = ""
+    var tech: String = ""
+    var cha: String = ""
+    var sw: String = ""
+    var sz: String = ""
+    var ruch: String = ""
+    var bc: String = ""
+    var emp: String = ""
 
     var weaponName1:String = ""
     var weaponDmg1: String = ""
     var weaponAmmo1: String = ""
+
     var weaponName2:String = ""
     var weaponDmg2: String = ""
     var weaponAmmo2: String = ""
+
     var weaponName3:String = ""
     var weaponDmg3: String = ""
     var weaponAmmo3: String = ""
+
     var weaponName4:String = ""
     var weaponDmg4: String = ""
     var weaponAmmo4: String = ""
+
 
     var armorHeadDef:String = ""
     var armorHeadPenalty: String = ""
@@ -57,10 +59,32 @@ data class Player(val nickname: String, val role: String) {
     var EqEquipment10:String = ""
     var EqComment10:String = ""
 
+    var cyborgizacja1:String = ""
+    var dane1:String = ""
+    var cyborgizacja2:String = ""
+    var dane2:String = ""
+    var cyborgizacja3:String = ""
+    var dane3:String = ""
+    var cyborgizacja4:String = ""
+    var dane4:String = ""
+    var cyborgizacja5:String = ""
+    var dane5:String = ""
+    var cyborgizacja6:String = ""
+    var dane6:String = ""
+    var cyborgizacja7:String = ""
+    var dane7:String = ""
+    var cyborgizacja8:String = ""
+    var dane8:String = ""
+    var cyborgizacja9:String = ""
+    var dane9:String = ""
+    var cyborgizacja10:String = ""
+    var dane10:String = ""
+
 
     constructor(id: Int, nickname: String, role: String,
-                int:String, ref:String, zw:String, tech:String,
-                cha:String, sw:String, sz:String, ruch:String, bc:String, emp:String,
+
+                int_s: String, ref: String, zw:String, tech:String, cha:String,
+                sw:String, sz:String, ruch:String, bc:String, emp:String,
 
                 weaponName1: String, weaponDmg1: String, weaponAmmo1: String,
                 weaponName2: String, weaponDmg2: String, weaponAmmo2: String,
@@ -80,12 +104,22 @@ data class Player(val nickname: String, val role: String) {
                 eqEqipment7: String, eqComment7: String,
                 eqEqipment8: String, eqComment8: String,
                 eqEqipment9: String, eqComment9: String,
-                eqEqipment10: String, eqComment10: String,) : this(nickname, role){
+                eqEqipment10: String, eqComment10: String,
 
+                cyborgizacja1: String, dane1:String,
+                cyborgizacja2: String, dane2:String,
+                cyborgizacja3: String, dane3:String,
+                cyborgizacja4: String, dane4:String,
+                cyborgizacja5: String, dane5:String,
+                cyborgizacja6: String, dane6:String,
+                cyborgizacja7: String, dane7:String,
+                cyborgizacja8: String, dane8:String,
+                cyborgizacja9: String, dane9:String,
+                cyborgizacja10: String, dane10:String) : this(nickname, role){
 
         this.id = id
 
-        this.int = int
+        this.int_s = int_s
         this.ref = ref
         this.zw = zw
         this.tech = tech
@@ -136,5 +170,26 @@ data class Player(val nickname: String, val role: String) {
         this.EqComment9 = eqComment9
         this.EqEquipment10 = eqEqipment10
         this.EqComment10 = eqComment10
+
+        this.cyborgizacja1 = cyborgizacja1
+        this.dane1 = dane1
+        this.cyborgizacja2 = cyborgizacja2
+        this.dane2 = dane2
+        this.cyborgizacja3 = cyborgizacja3
+        this.dane3 = dane3
+        this.cyborgizacja4 = cyborgizacja4
+        this.dane4 = dane4
+        this.cyborgizacja5 = cyborgizacja5
+        this.dane5 = dane5
+        this.cyborgizacja6 = cyborgizacja6
+        this.dane6 = dane6
+        this.cyborgizacja7 = cyborgizacja7
+        this.dane7 = dane7
+        this.cyborgizacja8 = cyborgizacja8
+        this.dane8 = dane8
+        this.cyborgizacja9 = cyborgizacja9
+        this.dane9 = dane9
+        this.cyborgizacja10 = cyborgizacja10
+        this.dane10 = dane10
     }
 }
