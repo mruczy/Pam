@@ -29,7 +29,7 @@ class PlayerAdd2 : Fragment() {
             val role = binding.addTextRole.text.toString()
 
             if (nickname.isNotEmpty() && role.isNotEmpty()) {
-                dbHandler.addPlayer2(Player(nickname, role))
+                dbHandler.addPlayer(Player(nickname, role))
             }
 
             Navigation.findNavController(binding.root).navigate(R.id.action_add_2_to_list2)
