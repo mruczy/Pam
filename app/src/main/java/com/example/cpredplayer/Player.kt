@@ -26,7 +26,7 @@ data class Player(val nickname: String, val role: String) {
     }
 
 
-//    constructor(id:  Int, nickname: String, role: String,
+    //    constructor(id:  Int, nickname: String, role: String,
 //        WeaponName: MutableList<String>, WeaponDmg: MutableList<String>, WeaponAmmo: MutableList<String>,
 //        ArmorHeadDef: String, ArmorHeadPenalty: String,
 //        ArmorBodyDef: String, ArmorBodyPenalty: String,
@@ -49,5 +49,5 @@ data class Player(val nickname: String, val role: String) {
 //
 //        this.EqEquipment = EqEquipment
 //        this.EqComment = EqComment
-        }
+    }
 }
